@@ -1,71 +1,78 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Capabilities from './components/Capabilities'
+import Facilities from './components/Facilities'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-black">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_400px_at_0%_0%,rgba(59,130,246,0.15),transparent),radial-gradient(800px_400px_at_100%_100%,rgba(217,70,239,0.12),transparent)]" />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
+      <Navbar />
+      <main className="relative">
+        <Hero />
+        <section id="about" className="bg-slate-950 py-24">
+          <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">About INCESA</h2>
+              <p className="mt-4 text-blue-200/85">
+                INCESA is the Integrated Center for Research, Development and Innovation in Applied Sciences at the University of Craiova. We act as a bridge between academia and industry, enabling cross‑disciplinary research, technology transfer and high‑impact projects.
+              </p>
+              <p className="mt-3 text-blue-200/80">
+                Our mission is to accelerate regional development and competitiveness by offering access to cutting‑edge facilities, expertise and collaborative programs across materials, energy, mechatronics and digital innovation.
+              </p>
             </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
+            <div className="relative">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-600 to-fuchsia-600 blur-lg opacity-30" />
+              <div className="relative rounded-2xl border border-white/10 bg-white/5 p-6">
+                <dl className="grid grid-cols-2 gap-6 text-center">
+                  <div>
+                    <dt className="text-xs uppercase tracking-widest text-blue-200/70">Labs</dt>
+                    <dd className="mt-1 text-3xl font-bold text-white">10+</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs uppercase tracking-widest text-blue-200/70">Projects</dt>
+                    <dd className="mt-1 text-3xl font-bold text-white">50+</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs uppercase tracking-widest text-blue-200/70">Partners</dt>
+                    <dd className="mt-1 text-3xl font-bold text-white">30+</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs uppercase tracking-widest text-blue-200/70">Years</dt>
+                    <dd className="mt-1 text-3xl font-bold text-white">10</dd>
+                  </div>
+                </dl>
               </div>
             </div>
           </div>
+        </section>
+        <Capabilities />
+        <Facilities />
+        <Projects />
 
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+        <section id="contact" className="relative bg-slate-950 py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">Contact</h2>
+              <p className="mt-4 text-blue-200/85">Get in touch to discuss collaboration, services or site visits.</p>
+            </div>
+
+            <form className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <input className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-blue-200/50 focus:outline-none focus:ring-2 focus:ring-blue-600/50" placeholder="Your name" />
+              <input className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-blue-200/50 focus:outline-none focus:ring-2 focus:ring-blue-600/50" placeholder="Email" />
+              <input className="md:col-span-2 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-blue-200/50 focus:outline-none focus:ring-2 focus:ring-blue-600/50" placeholder="Subject" />
+              <textarea rows="5" className="md:col-span-2 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-blue-200/50 focus:outline-none focus:ring-2 focus:ring-blue-600/50" placeholder="Message" />
+              <div>
+                <button type="button" className="rounded-lg bg-gradient-to-r from-blue-600 to-fuchsia-600 px-6 py-3 text-white font-semibold shadow-lg shadow-blue-600/20">Send message</button>
+              </div>
+            </form>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
+      <Footer />
     </div>
   )
 }
